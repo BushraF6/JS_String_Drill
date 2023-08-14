@@ -1,6 +1,6 @@
 function convertToNumber(strList) {
 
-    for (str = 0; str < strList.length; str++) {
+    for (let str = 0; str < strList.length; str++) {
 
         strList[str] = strList[str].replace('$', '');
         strList[str] = strList[str].replace(',', '');

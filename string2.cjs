@@ -1,19 +1,27 @@
 function convertToNumber(ip) {
-    let ipList = ip.split('.');
 
-    for (let num = 0; num < ipList.length; num++) {
+    if (typeof ip === 'string' && ip) {
+        let ipList = ip.split('.');
 
-        ipList[num] = Number(ipList[num]);
+        for (let num = 0; num < ipList.length; num++) {
 
-        if (isNaN(ipList[num])) {
+            ipList[num] = Number(ipList[num]);
 
-            ipList = [];
-            break;
-    
-        }else {
-            continue;
+            if (isNaN(ipList[num])) {
+                ipList = [];
+                break;
+        
+            }else {
+                continue;
+            }
         }
+
+        return ipList;
+
+    }else {
+        return '';
     }
-    return ipList;
+
 }
+
 module.exports = convertToNumber;
